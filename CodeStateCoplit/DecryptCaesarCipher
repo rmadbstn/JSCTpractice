@@ -1,0 +1,29 @@
+function decryptCaesarCipher(str, secret) {
+    // TODO: 여기에 코드를 작성합니다.
+
+    let result = "";
+    for (let i = 0; i < str.length; i++) {
+
+        if (str[i] === ' ') {
+            result += ' ';
+        } else {
+            let a = str[i].charCodeAt(0); //아스키 코드 값으로 수로 변경.
+
+            // console.log(`${str[i]}: ${a}`);
+
+            a -= secret;      //수로 변경한 후 더함.
+            // console.log("a:"+a);
+            if(a<97){
+                a+=26;
+            }
+
+            a = String.fromCharCode(a); //다시 아스키코드 값으로 문자로 변경
+
+            result += a;
+        }
+    }
+
+    return result;
+}
+let output = decryptCaesarCipher('nzop delepd dfaazced jzf', 11);
+console.log(output);
