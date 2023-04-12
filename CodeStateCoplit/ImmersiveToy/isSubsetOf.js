@@ -1,32 +1,32 @@
 const isSubsetOf = function (base, sample) {
-    // TODO: 여기에 코드를 작성합니다.
-    for(let i = 0;i<sample.length;i++){
+  // TODO: 여기에 코드를 작성합니다.
 
-        let check = false;
-  
-      for(let j= 0 ; j<base.length;j++){
-  
-        if(sample[i]===base[j]){
-          break;
-        }
-  
-        if(j===base.length-1){
-            check = true;
-        }
+  base = base.sort();
+  sample = sample.sort();
+
+  let checkIndex = 0;
+
+  for (let i = 0; i < base.length; i++) {
+
+    if(base[i]===sample[checkIndex]){
+
+
+      if(checkIndex===sample.length-1){
+        return true;
       }
-  
-      if(check === true){
-        return false;
-      }
-      
-  
+
+      checkIndex++;
+
+
     }
 
-    return true;
-    
-  };
-  
-  let base = [1, 2, 3, 4, 5];
-let sample = [6, 7];
+  }
+
+  return false;
+
+};
+
+let base = [1, 2, 3, 4, 5];
+let sample = [1, 3];
 let output = isSubsetOf(base, sample);
 console.log(output);
