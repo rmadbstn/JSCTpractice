@@ -5,6 +5,8 @@ const powerSet = function (str) {
 
     //중복 제거
 
+    let result = [''];
+
     for(let i = 0; i<arr.length-1;i++){
 
         if(arr[i]===arr[i+1]){
@@ -16,15 +18,36 @@ const powerSet = function (str) {
     }
 
 
-    let checkArr = Array(arr.length+1).fill(false);
+    let checkArr = Array(arr.length).fill(false);
+
+    let addStr = '';
+
+    function maker(){
+
+        result.push(addStr);
+
+        if(str.length>=addStr.length){
+            return;
+        }
+
+        for(let i=0;i<checkArr.length;i++){
+
+            if(!checkArr[i]){
+                
+                str+=arr[i];
+                checkArr[i] = true;
+                maker();
+                addStr.slice(addStr.length-2,1);
+                checkArr[i] = false;
+
+            }
+            
 
 
+        }
 
-
-
-
-
-    return arr;
+    }
+    return result;
 };
 
 
