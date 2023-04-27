@@ -23,18 +23,18 @@ const powerSet = function (str) {
     let addStr = '';
 
     function maker(){
-
+ 
         result.push(addStr);
 
-        if(str.length>=addStr.length){
+        if(arr.length<=addStr.length){
             return;
-        }
+        } 
 
         for(let i=0;i<checkArr.length;i++){
 
             if(!checkArr[i]){
-                
-                str+=arr[i];
+                console.log('check');
+                addStr+=arr[i];
                 checkArr[i] = true;
                 maker();
                 addStr.slice(addStr.length-2,1);
@@ -47,6 +47,8 @@ const powerSet = function (str) {
         }
 
     }
+    maker(); 
+    console.log(arr);
     return result;
 };
 
