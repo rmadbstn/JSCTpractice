@@ -6,7 +6,7 @@ const insertionSort = function (arr) {
 
 
     let cur = arr[i];
-
+    I Know
 
 
   }
