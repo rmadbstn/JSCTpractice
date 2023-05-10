@@ -15,7 +15,7 @@ const rotatedArraySearch = function (rotated, target) {
           right = middle - 1;
         } else {
           left = middle + 1;
-        }
+        } 
       } else {
         // 오른쪽 절반이 정렬되어 있는 상태
         if (target <= rotated[right] && rotated[middle] < target) {
