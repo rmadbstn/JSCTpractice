@@ -42,3 +42,5 @@ const inequalityNumber = function (signs) {
   const max = aux(-1, signs, [], digits.reverse(), Array(10).fill(false));
   return max - min;
 };
+
+//.
