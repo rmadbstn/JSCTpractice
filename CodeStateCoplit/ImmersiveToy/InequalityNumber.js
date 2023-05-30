@@ -43,4 +43,4 @@ const inequalityNumber = function (signs) {
   return max - min;
 };
 
-//.
+//..
