@@ -35,7 +35,7 @@ const rotateMatrix = function (matrix, k = 1) { // k : 남은 회전 수
     if (k === 0 || k === undefined) {
         return arr;
     } else {
-        rotateMatrix(arr, k);
+        return rotateMatrix(arr, k);
     }
 };
 
@@ -48,6 +48,6 @@ const matrix = [
 console.log(matrix[0][0]); // --> 1
 console.log(matrix[3][2]); // --> 15
 
-const rotatedMatrix = rotateMatrix(matrix,1);
+const rotatedMatrix = rotateMatrix(matrix,2);
 console.log(rotatedMatrix[0][0]); // --> 13
 console.log(rotatedMatrix[3][2]); // --> 8
