@@ -9,11 +9,9 @@ const spiralTraversal = function (matrix) {
 
     let result = '';
 
-    for (let i = 0; i < matrix.length+1; i++) {
+    for (let i = 0; i < matrix.length; i++) {
         checkArr[i] = Array(matrix[i].length).fill(false);
     }
-
-    let xy = [0, 0];
 
     let recur = function (dirsIdx, cur) {
 
@@ -24,15 +22,16 @@ const spiralTraversal = function (matrix) {
         if (x  > matrix[0].length - 1 || x < 0 || y > matrix.length || y < 0 || checkArr[y][x] === true){
             return; //방향을 바꿨음에도 범위를 벗어나게되면 리턴. 
         }
-
+        
+        console.log(`[${[y,x]}],${dirsIdx}`);
 
 
         result += matrix[y][x];
         checkArr[y][x] = true; //방문한 장소 체크. 
 
-        console.log(`[${[y,x]}],${dirsIdx}`);
+        // console.log(`[${[y,x]}],${dirsIdx}`);
 
-        if (x + dirs[dirsIdx][1] > matrix[0].length - 1 || x + dirs[dirsIdx][1] < 0 || y + dirs[dirsIdx][0] > matrix.length || y + dirs[dirsIdx][0] < 0 || checkArr[y + dirs[dirsIdx][0]][x + dirs[dirsIdx][1]] === true) {
+        if (x + dirs[dirsIdx][1] > matrix[0].length - 1 || x + dirs[dirsIdx][1] < 0 || y + dirs[dirsIdx][0] > matrix.length-1 || y + dirs[dirsIdx][0] < 0 || checkArr[y + dirs[dirsIdx][0]][x + dirs[dirsIdx][1]] === true) {
 
             if (dirsIdx === 3) {
                 dirsIdx = 0;
@@ -57,7 +56,7 @@ const spiralTraversal = function (matrix) {
 
     }
 
-    recur(1,[0,0]);
+    recur(1,[0,0]); //시작 방향과 좌표를 넣어서 재귀 시작.
     
     return result;
     

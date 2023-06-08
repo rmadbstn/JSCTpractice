@@ -1,5 +1,18 @@
-let x =5;
+function recur(num) {
 
-x%=2;
+    if(num>10){
+        return num;
+    }
 
-console.log(x);
+
+    
+    return recur(num*3);
+
+
+
+}
+
+
+
+
+ console.log(recur(1));
