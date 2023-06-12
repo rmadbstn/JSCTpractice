@@ -23,7 +23,7 @@ const spiralTraversal = function (matrix) {
             return; //방향을 바꿨음에도 범위를 벗어나게되면 리턴. 
         }
         
-        console.log(`[${[y,x]}],${dirsIdx}`);
+        // console.log(`[${[y,x]}],${dirsIdx}`);
 
 
         result += matrix[y][x];
